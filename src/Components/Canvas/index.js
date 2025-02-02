@@ -1,8 +1,7 @@
-import React, {useState, useRef, Suspense} from 'react'
+import React, { useRef, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Points, PointMaterial, Preload, Point } from '@react-three/drei'
+// import { Points, PointMaterial, Preload } from '@react-three/drei'
 import * as random from "maath/random/dist/maath-random.esm"
-import { Sphere } from 'three'
 
 const Stars = (props) => {
 
@@ -16,7 +15,7 @@ const Stars = (props) => {
 
     return (
         <group rotation={[0, 0, Math.PI / 4]}>
-            <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+            {/* <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
                 <PointMaterial 
                     transparent
                     color="#f272c8"
@@ -24,7 +23,7 @@ const Stars = (props) => {
                     sizeAttenuation={true}
                     depthWrite={false}
                 />
-            </Points>
+            </Points> */}
         </group>
     )
 }
@@ -35,7 +34,7 @@ const StarsCanvas = () => {
             <Suspense fallback={null} >
                 <Stars />
             </Suspense>
-            <Preload all />
+            {/* <Preload all /> */}
         </Canvas>
     </div>
 }
